@@ -1,5 +1,4 @@
 "use client";
-import JobSeekerNavigation from "@/components/modules/DasboardNavigationBar/JobSeekerNavigation";
 import Footer from "@/components/shared/Footer";
 import NavBar from "@/components/shared/NavBar";
 import { useAuth } from "@/hooks/useAuth";
@@ -20,7 +19,6 @@ export default function DashboardLayout({
       <StoreProvider>
         {" "}
         <NavBar />
-        <JobSeekerNavigation />
         {children}
         <Footer />
       </StoreProvider>

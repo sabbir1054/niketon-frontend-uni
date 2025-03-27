@@ -1,4 +1,6 @@
 "use client";
+import Footer from "@/components/shared/Footer";
+import NavBar from "@/components/shared/NavBar";
 import React from "react";
 import StoreProvider from "../StoreProvide";
 
@@ -9,7 +11,12 @@ export default function CommonLayout({
 }>) {
   return (
     <>
-      <StoreProvider>{children}</StoreProvider>
+      <StoreProvider>
+        <NavBar />
+        <div className="min-h-screen"> {children}</div>
+
+        <Footer />
+      </StoreProvider>
     </>
   );
 }
