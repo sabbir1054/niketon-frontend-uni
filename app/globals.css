@@ -54,25 +54,25 @@
   --card-foreground: #18191c; /* Card text color */
   --popover: #ffffff; /* Popup/modal background */
   --popover-foreground: #18191c; /* Popup text color */
-  --primary: #fe9800; /* Orange accent color */
-  --primary-foreground: #faf8f1; /* Text on primary elements */
-  --secondary: #f8f8f8; /* Secondary button & background */
-  --secondary-foreground: #767f8c; /* Text on secondary elements */
-  --muted: #f8f8f8; /* Muted elements background */
+  --primary: #6c60fe; /* Updated primary color */
+  --primary-foreground: #ffffff; /* Text on primary elements */
+  --secondary: #f0f0ff; /* Soft purple shade for secondary elements */
+  --secondary-foreground: #4a44d4; /* Text on secondary elements */
+  --muted: #f0f0ff; /* Muted elements background */
   --muted-foreground: #6f6f6f; /* Text color for muted elements */
-  --accent: #ffc107; /* Yellow highlight color */
-  --accent-foreground: #767f8c; /* Text on accent elements */
-  --destructive: #d9534f; /* Error & warning buttons */
-  --destructive-foreground: #faf8f1; /* Text on destructive elements */
-  --border: #e0e0e0; /* Borders for cards, sections */
-  --input: #e0e0e0; /* Input field borders */
-  --ring: #fe9800; /* Focus rings & highlights */
+  --accent: #9b90ff; /* Light purple accent */
+  --accent-foreground: #ffffff; /* Text on accent elements */
+  --destructive: #fd3358; /* Error & warning buttons */
+  --destructive-foreground: #ffffff; /* Text on destructive elements */
+  --border: #dcd6ff; /* Soft purple border */
+  --input: #dcd6ff; /* Input field borders */
+  --ring: #6c60fe; /* Focus rings & highlights */
   --radius: 0.5rem; /* Border radius */
-  --chart-1: #f7a278;
-  --chart-2: #1ca086;
-  --chart-3: #174e75;
-  --chart-4: #e2c75c;
-  --chart-5: #f0a850;
+  --chart-1: #9b90ff;
+  --chart-2: #28a745;
+  --chart-3: #ffcc00;
+  --chart-4: #a633ff;
+  --chart-5: #ff3366;
   --primary-font: "Nunito", sans-serif;
   --hero-font: "Martel", sans-serif;
 }
@@ -84,20 +84,20 @@
   --card-foreground: #f5f5f5; /* Card text color */
   --popover: #18191c; /* Dark mode popup background */
   --popover-foreground: #f5f5f5;
-  --primary: #fe9800; /* Orange accent for dark mode */
+  --primary: #6c60fe; /* Keeping primary consistent */
   --primary-foreground: #f5f5f5;
   --secondary: #2b2b2b;
-  --secondary-foreground: #f5f5f5;
+  --secondary-foreground: #dcd6ff;
   --muted: #2b2b2b;
   --muted-foreground: #a5a5a5;
-  --accent: #ffc107; /* Yellow highlight in dark mode */
+  --accent: #9b90ff; /* Yellow highlight in dark mode */
   --accent-foreground: #f5f5f5;
-  --destructive: #c82333;
+  --destructive: #fd3358;
   --destructive-foreground: #f5f5f5;
   --border: #2b2b2b;
   --input: #2b2b2b;
-  --ring: #fe9800;
-  --chart-1: #3366ff;
+  --ring: #6c60fe;
+  --chart-1: #9b90ff;
   --chart-2: #28a745;
   --chart-3: #ffcc00;
   --chart-4: #a633ff;
