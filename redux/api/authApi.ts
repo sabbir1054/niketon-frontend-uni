@@ -5,7 +5,6 @@ import { baseApi } from "./baseApi";
 const AuthApi = baseApi.injectEndpoints({
   endpoints: (build) => ({
     register: build.mutation({
-      
       query: (payload: any) => ({
         url: "/auth/register",
         method: "POST",
@@ -19,7 +18,34 @@ const AuthApi = baseApi.injectEndpoints({
         data: payload,
       }),
     }),
+    forgetPassword: build.mutation({
+      query: (payload: any) => ({
+        url: "/auth/forgetPasswordEmailSend",
+        method: "POST",
+        data: payload,
+      }),
+    }),
+    verifyOtp: build.mutation({
+      query: (payload: any) => ({
+        url: "/auth/forgetPasswordOTPVerify",
+        method: "POST",
+        data: payload,
+      }),
+    }),
+    resetPassword: build.mutation({
+      query: (payload: any) => ({
+        url: "/auth/forgetPasswordSetNewPassword",
+        method: "POST",
+        data: payload,
+      }),
+    }),
   }),
 });
 
-export const { useLoginMutation, useRegisterMutation } = AuthApi;
+export const {
+  useLoginMutation,
+  useRegisterMutation,
+  useForgetPasswordMutation,
+  useVerifyOtpMutation,
+  useResetPasswordMutation,
+} = AuthApi;
