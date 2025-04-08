@@ -3,6 +3,7 @@ import FeaturedPropertiesSection from "@/components/modules/FeaturedPropertiesSe
 import Hero from "@/components/modules/Hero";
 import HowItWorks from "@/components/modules/HowItsWorks";
 import PropertyTypeSection from "@/components/modules/PropertyTypeSection";
+import TestimonialSection from "@/components/modules/TestimonialSection";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <PropertyTypeSection />
       <FeaturedPropertiesSection />
       <BangladeshiCities />
+      <TestimonialSection />
     </>
   );
 }
