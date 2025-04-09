@@ -14,19 +14,19 @@ export function useAuth() {
     const token = getFromLocalStorage(authKey);
 
     if (!token) {
-      router.replace("/login"); // Redirect if no token
+      router.replace("/auth/login"); // Redirect if no token
       toast.warning("Please login first");
       return;
     }
 
     const user = getUserRoleFromLocal(token);
 
-    if (user?.account_type && user?.sub) {
+    if (user?.role) {
       setIsAuthenticated(true);
     } else {
       setIsAuthenticated(false);
       toast.error("Something went wrong!, try again");
-      router.replace("/login");
+      router.replace("/auth/login");
     }
   }, []);
 

@@ -11,14 +11,12 @@ import { setUser } from "@/redux/slice/authSlice";
 import { removeFromLocalStorage } from "@/utils/localStorage";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useDispatch } from "react-redux";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { Button } from "../ui/button";
 import SpinnerOverlay from "./SpinnerOverlay";
 
 const NavBar = () => {
-  const router = useRouter();
   const { data: profileData, isLoading } = useGetMyProfileQuery({});
   const dispatch = useDispatch();
 
@@ -28,8 +26,7 @@ const NavBar = () => {
   const handleLogout = () => {
     removeFromLocalStorage(authKey);
     dispatch(setUser({ token: null }));
-    router.push("/");
-    window.location.reload();
+    window.location.href = "/";
   };
 
   return (

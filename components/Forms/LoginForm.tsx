@@ -40,8 +40,9 @@ export default function SigninForm() {
         toast.success("Login success");
         dispatch(setUser({ token: res?.data?.data?.accessToken }));
         setToLocalStorage(authKey, res?.data?.data?.accessToken);
-        router.push("/");
-        window.location.reload();
+
+        window.location.href = "/";
+        // router.push("/");
       } else {
         toast.error(res?.data?.message);
       }
@@ -85,9 +86,12 @@ export default function SigninForm() {
               placeholder="Enter Password"
             />
             {/* <div className=" text-center text-gray-500"> */}
-            <p className=" my-1 text-end text-destructive font-medium">
-              Forgot Password ?
-            </p>
+            <Link href={"/auth/forgetPassword"}>
+              {" "}
+              <p className=" my-1 text-end text-destructive font-medium">
+                Forgot Password ?
+              </p>
+            </Link>
             {/* </div> */}
             <button
               type="button"
