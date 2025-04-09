@@ -1,44 +1,77 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 /* eslint-disable @next/next/no-img-element */
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import {
+  useGetMyProfileQuery,
+  useUpdateProfileMutation,
+} from "@/redux/api/userApi";
 import { Pencil } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 
 const ProfilePage = () => {
+  const { data: profileData } = useGetMyProfileQuery({});
+  const [updateData, { isLoading }] = useUpdateProfileMutation();
   const [editMode, setEditMode] = useState(false);
 
   const {
     register,
     handleSubmit,
-    setValue,
+    reset,
     formState: { errors },
   } = useForm({
     defaultValues: {
-      name: "John Doe",
-      email: "johndoe@example.com",
-      phone: "+1234567890",
-      address: "123 Main Street",
+      name: "",
+      email: "",
+      phone: "",
+      address: "",
     },
   });
 
-  const onSubmit = (data) => {
-    console.log("Updated Data:", data);
+  // ✅ Update form fields when profile data is loaded
+  useEffect(() => {
+    if (profileData?.data) {
+      reset({
+        name: profileData.data.name || "",
+        email: profileData.data.email || "",
+        phone: profileData.data.phone || "",
+        address: profileData.data.address || "",
+      });
+    }
+  }, [profileData, reset]);
+
+  const onSubmit = async (data: any) => {
+    try {
+      const res = await updateData({ ...data }).unwrap();
+      console.log(res);
+
+      if (res?.success === true) {
+        toast.success("User profile update");
+      }
+    } catch (error) {
+      toast.error("Something went wrong");
+    }
+    // console.log("Updated Data:", data);
     setEditMode(false);
+    // You can trigger an API call here to update user profile
   };
 
   return (
     <div className="min-h-screen">
-      <div className="container mt-5 max-w-5xl   mx-auto">
-        <div className="grid grid-cols-12 bg-white  p-10 rounded-2xl border">
+      <div className="container mt-5 max-w-5xl mx-auto">
+        <div className="grid grid-cols-12 bg-white p-10 rounded-2xl border">
           <div className="col-span-4">
-            <img src="/images/profile.jpg" alt="" />
+            <img src="/images/profile.jpg" alt="Profile" />
           </div>
           <div className="col-span-8">
-            <Card className="w-full ">
+            <Card className="w-full">
               <CardContent className="p-6">
                 <div className="flex justify-between items-center mb-4">
                   <h2 className="text-xl font-semibold">Profile Information</h2>
@@ -60,7 +93,7 @@ const ProfilePage = () => {
                       disabled={!editMode}
                     />
                     {errors.name && (
-                      <p className="text-red-500 text-sm">
+                      <p className="text-sm text-red-500">
                         {errors.name.message}
                       </p>
                     )}
