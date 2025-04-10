@@ -1,13 +1,29 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 "use client";
-import { selectCurrentUser } from "@/redux/slice/authSlice";
-import { useSelector } from "react-redux";
 
-const page = () => {
-  const user = useSelector(selectCurrentUser);
-  console.log("sss", user);
+import StoreProvider from "@/app/StoreProvide";
+import Sidebar from "@/components/modules/SideBar";
+import Footer from "@/components/shared/Footer";
+import NavBar from "@/components/shared/NavBar";
+import React from "react";
 
-  return <div className="min-h-screen"></div>;
-};
+export default function DashboardLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <StoreProvider>
+      <NavBar />
+      <div className="flex h-screen overflow-hidden">
+        {/* Sidebar */}
+        <Sidebar />
 
-export default page;
+        {/* Main Content */}
+        <div className="flex flex-col flex-1 overflow-y-auto">
+          <main className="flex-1 p-4">{children}</main>
+        </div>
+      </div>
+      <Footer />
+    </StoreProvider>
+  );
+}
