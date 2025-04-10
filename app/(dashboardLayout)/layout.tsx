@@ -3,7 +3,6 @@
 import Sidebar from "@/components/modules/SideBar";
 import Footer from "@/components/shared/Footer";
 import NavBar from "@/components/shared/NavBar";
-import { useAuth } from "@/hooks/useAuth";
 import React from "react";
 import StoreProvider from "../StoreProvide";
 
@@ -12,10 +11,10 @@ export default function DashboardLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const auth = useAuth();
-  if (!auth) {
-    return null;
-  }
+  // const auth = useAuth();
+  // if (!auth) {
+  //   return null;
+  // }
   return (
     <StoreProvider>
       <NavBar />
