@@ -599,14 +599,7 @@
   resolved "https://registry.yarnpkg.com/@radix-ui/react-primitive/-/react-primitive-2.0.3.tgz#13c654dc4754558870a9c769f6febe5980a1bad8"
   integrity sha512-Pf/t/GkndH7CQ8wE2hbkXA+WyZ83fhQQn5DDmwDiDo6AwN/fhaH8oqZ0jRjMrO2iaMhDi6P1HRx6AZwyMinY1g==
   dependencies:
-    "@radix-ui/react-slot" "1.2.0"
-
-"@radix-ui/react-primitive@2.0.3":
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/@radix-ui/react-primitive/-/react-primitive-2.0.3.tgz#13c654dc4754558870a9c769f6febe5980a1bad8"
-  integrity sha512-Pf/t/GkndH7CQ8wE2hbkXA+WyZ83fhQQn5DDmwDiDo6AwN/fhaH8oqZ0jRjMrO2iaMhDi6P1HRx6AZwyMinY1g==
-  dependencies:
-    "@radix-ui/react-slot" "1.2.0"
+    "@radix-ui/react-slot" "1.1.2"
 
 "@radix-ui/react-radio-group@^1.2.3":
   version "1.2.4"
@@ -851,65 +844,7 @@
     "@tailwindcss/node" "4.1.3"
     "@tailwindcss/oxide" "4.1.3"
     postcss "^8.4.41"
-    tailwindcss "4.1.3"
-
-"@tybys/wasm-util@^0.9.0":
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/@tybys/wasm-util/-/wasm-util-0.9.0.tgz#3e75eb00604c8d6db470bf18c37b7d984a0e3355"
-  integrity sha512-6+7nlbMVX/PVDCwaIQ8nTOPveOcFLSt8GcXdx8hD0bt39uWxYT88uXzqTd4fTvqta7oeUJqudepapKNt2DYJFw==
-  dependencies:
-    tslib "^2.4.0"
-
-"@types/d3-array@^3.0.3":
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/@types/d3-array/-/d3-array-3.2.1.tgz#1f6658e3d2006c4fceac53fde464166859f8b8c5"
-  integrity sha512-Y2Jn2idRrLzUfAKV2LyRImR+y4oa2AntrgID95SHJxuMUrkNXmanDSed71sRNZysveJVt1hLLemQZIady0FpEg==
-
-"@types/d3-color@*":
-  version "3.1.3"
-  resolved "https://registry.yarnpkg.com/@types/d3-color/-/d3-color-3.1.3.tgz#368c961a18de721da8200e80bf3943fb53136af2"
-  integrity sha512-iO90scth9WAbmgv7ogoq57O9YpKmFBbmoEoCHDB2xMBY0+/KVrqAaCDyCE16dUspeOvIxFFRI+0sEtqDqy2b4A==
-
-"@types/d3-ease@^3.0.0":
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/@types/d3-ease/-/d3-ease-3.0.2.tgz#e28db1bfbfa617076f7770dd1d9a48eaa3b6c51b"
-  integrity sha512-NcV1JjO5oDzoK26oMzbILE6HW7uVXOHLQvHshBUW4UMdZGfiY6v5BeQwh9a9tCzv+CeefZQHJt5SRgK154RtiA==
-
-"@types/d3-interpolate@^3.0.1":
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/@types/d3-interpolate/-/d3-interpolate-3.0.4.tgz#412b90e84870285f2ff8a846c6eb60344f12a41c"
-  integrity sha512-mgLPETlrpVV1YRJIglr4Ez47g7Yxjl1lj7YKsiMCb27VJH9W8NVM6Bb9d8kkpG/uAQS5AmbA48q2IAolKKo1MA==
-  dependencies:
-    "@types/d3-color" "*"
-
-"@types/d3-path@*":
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/@types/d3-path/-/d3-path-3.1.1.tgz#f632b380c3aca1dba8e34aa049bcd6a4af23df8a"
-  integrity sha512-VMZBYyQvbGmWyWVea0EHs/BwLgxc+MKi1zLDCONksozI4YJMcTt8ZEuIR4Sb1MMTE8MMW49v0IwI5+b7RmfWlg==
-
-"@types/d3-scale@^4.0.2":
-  version "4.0.9"
-  resolved "https://registry.yarnpkg.com/@types/d3-scale/-/d3-scale-4.0.9.tgz#57a2f707242e6fe1de81ad7bfcccaaf606179afb"
-  integrity sha512-dLmtwB8zkAeO/juAMfnV+sItKjlsw2lKdZVVy6LRr0cBmegxSABiLEpGVmSJJ8O08i4+sGR6qQtb6WtuwJdvVw==
-  dependencies:
-    "@types/d3-time" "*"
-
-"@types/d3-shape@^3.1.0":
-  version "3.1.7"
-  resolved "https://registry.yarnpkg.com/@types/d3-shape/-/d3-shape-3.1.7.tgz#2b7b423dc2dfe69c8c93596e673e37443348c555"
-  integrity sha512-VLvUQ33C+3J+8p+Daf+nYSOsjB4GXp19/S/aGo60m9h1v6XaxjiT82lKVWJCfzhtuZ3yD7i/TPeC/fuKLLOSmg==
-  dependencies:
-    "@types/d3-path" "*"
-
-"@types/d3-time@*", "@types/d3-time@^3.0.0":
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/@types/d3-time/-/d3-time-3.0.4.tgz#8472feecd639691450dd8000eb33edd444e1323f"
-  integrity sha512-yuzZug1nkAAaBlBBikKZTgzCeA+k1uy4ZFwWANOfKw5z5LRhV0gNA7gNkKm7HoK+HRN0wX3EkxGk0fpbWhmB7g==
-
-"@types/d3-timer@^3.0.0":
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/@types/d3-timer/-/d3-timer-3.0.2.tgz#70bbda77dc23aa727413e22e214afa3f0e852f70"
-  integrity sha512-Ps3T8E8dZDam6fUyNiMkekK3XUsaUEik+idO9/YjPtfj2qruF8tFBXS7XhtE4iIXBLxhmLjP3SXpLhVf21I9Lw==
+    tailwindcss "4.0.9"
 
 "@types/estree@^1.0.6":
   version "1.0.7"
@@ -1353,9 +1288,9 @@ callsites@^3.0.0:
   integrity sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==
 
 caniuse-lite@^1.0.30001579:
-  version "1.0.30001712"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001712.tgz#41ee150f12de11b5f57c5889d4f30deb451deedf"
-  integrity sha512-MBqPpGYYdQ7/hfKiet9SCI+nmN5/hp4ZzveOJubl5DTAMa5oggjAuoi0Z4onBpKPFI2ePGnQuQIzF3VxDjDJig==
+  version "1.0.30001701"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001701.tgz#ad9c90301f7153cf6b3314d16cc30757285bf9e7"
+  integrity sha512-faRs/AW3jA9nTwmJBSO1PQ6L/EOgsB5HMQQq4iCu5zhPgVVgO/pZRHlmatwijZKetFw8/Pr4q6dEN8sJuq8qTw==
 
 chalk@^4.0.0:
   version "4.1.2"
@@ -3072,30 +3007,9 @@ react-transition-group@^4.4.5:
     prop-types "^15.6.2"
 
 react@^19.0.0:
-  version "19.1.0"
-  resolved "https://registry.yarnpkg.com/react/-/react-19.1.0.tgz#926864b6c48da7627f004795d6cce50e90793b75"
-  integrity sha512-FS+XFBNvn3GTAWq26joslQgWNoFu08F4kl0J4CgdNKADkdSGXQyTCnKteIAJy96Br6YbpEU1LSzV5dYtjMkMDg==
-
-recharts-scale@^0.4.4:
-  version "0.4.5"
-  resolved "https://registry.yarnpkg.com/recharts-scale/-/recharts-scale-0.4.5.tgz#0969271f14e732e642fcc5bd4ab270d6e87dd1d9"
-  integrity sha512-kivNFO+0OcUNu7jQquLXAxz1FIwZj8nrj+YkOKc5694NbjCvcT6aSZiIzNzd2Kul4o4rTto8QVR9lMNtxD4G1w==
-  dependencies:
-    decimal.js-light "^2.4.1"
-
-recharts@^2.15.2:
-  version "2.15.2"
-  resolved "https://registry.yarnpkg.com/recharts/-/recharts-2.15.2.tgz#12adcda964b4054fba517512eb94fdff1463b0c1"
-  integrity sha512-xv9lVztv3ingk7V3Jf05wfAZbM9Q2umJzu5t/cfnAK7LUslNrGT7LPBr74G+ok8kSCeFMaePmWMg0rcYOnczTw==
-  dependencies:
-    clsx "^2.0.0"
-    eventemitter3 "^4.0.1"
-    lodash "^4.17.21"
-    react-is "^18.3.1"
-    react-smooth "^4.0.4"
-    recharts-scale "^0.4.4"
-    tiny-invariant "^1.3.1"
-    victory-vendor "^36.6.8"
+  version "19.0.0"
+  resolved "https://registry.yarnpkg.com/react/-/react-19.0.0.tgz#6e1969251b9f108870aa4bff37a0ce9ddfaaabdd"
+  integrity sha512-V8AVnmPIICiWpGfm6GLzCR/W5FXLchHop40W4nXBmdlEceh16rCN8O8LNWm5bh5XUX91fh7KpA+W0TgMKmgTpQ==
 
 redux-persist@^6.0.0:
   version "6.0.0"
@@ -3648,29 +3562,9 @@ use-sidecar@^1.1.3:
     tslib "^2.0.0"
 
 use-sync-external-store@^1.4.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/use-sync-external-store/-/use-sync-external-store-1.5.0.tgz#55122e2a3edd2a6c106174c27485e0fd59bcfca0"
-  integrity sha512-Rb46I4cGGVBmjamjphe8L/UnvJD+uPPtTkNvX5mZgqdbavhI4EbgIWJiIHXJ8bc/i9EQGPRh4DwEURJ552Do0A==
-
-victory-vendor@^36.6.8:
-  version "36.9.2"
-  resolved "https://registry.yarnpkg.com/victory-vendor/-/victory-vendor-36.9.2.tgz#668b02a448fa4ea0f788dbf4228b7e64669ff801"
-  integrity sha512-PnpQQMuxlwYdocC8fIJqVXvkeViHYzotI+NJrCuav0ZYFoq912ZHBk3mCeuj+5/VpodOjPe1z0Fk2ihgzlXqjQ==
-  dependencies:
-    "@types/d3-array" "^3.0.3"
-    "@types/d3-ease" "^3.0.0"
-    "@types/d3-interpolate" "^3.0.1"
-    "@types/d3-scale" "^4.0.2"
-    "@types/d3-shape" "^3.1.0"
-    "@types/d3-time" "^3.0.0"
-    "@types/d3-timer" "^3.0.0"
-    d3-array "^3.1.6"
-    d3-ease "^3.0.1"
-    d3-interpolate "^3.0.1"
-    d3-scale "^4.0.2"
-    d3-shape "^3.1.0"
-    d3-time "^3.0.0"
-    d3-timer "^3.0.1"
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/use-sync-external-store/-/use-sync-external-store-1.4.0.tgz#adbc795d8eeb47029963016cefdf89dc799fcebc"
+  integrity sha512-9WXSPC5fMv61vaupRkCKCxsPxBocVnwakBEkMIHHpkTTg6icbJtg6jzgtLDm4bl3cSHAca52rYWih0k4K3PfHw==
 
 which-boxed-primitive@^1.1.0, which-boxed-primitive@^1.1.1:
   version "1.1.1"
