@@ -18,7 +18,13 @@ const UserApi = baseApi.injectEndpoints({
       }),
       invalidatesTags: ["userProfile"],
     }),
+    ownerDashboard: build.query({
+      query: () => ({
+        url: "/user/ownerDashboard",
+        method: "GET",
+      }),
+    }),
   }),
 });
 
-export const { useGetMyProfileQuery, useUpdateProfileMutation } = UserApi;
+export const { useGetMyProfileQuery, useUpdateProfileMutation,useOwnerDashboardQuery } = UserApi;
