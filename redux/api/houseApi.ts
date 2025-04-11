@@ -2,13 +2,20 @@ import { baseApi } from "./baseApi";
 
 const houseApi = baseApi.injectEndpoints({
   endpoints: (build) => ({
-    getHouses: build.query({
+    myHouses: build.query({
       query: (arg) => ({
         url: "/house",
         method: "GET",
         params: arg,
       }),
       providesTags: ["houses"],
+    }),
+    getHouses: build.query({
+      query: (arg) => ({
+        url: "/house",
+        method: "GET",
+        params: arg,
+      }),
     }),
     getSingleHouseDetails: build.query({
       query: (arg) => ({
@@ -59,4 +66,5 @@ export const {
   useGetSingleHouseDetailsQuery,
   useDeleteHouseImageMutation,
   useUpdateHouseInfoMutation,
+  useMyHousesQuery,
 } = houseApi;
