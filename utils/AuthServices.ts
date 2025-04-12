@@ -16,6 +16,15 @@ export const getUserInfo = async (userType: string, token: string) => {
 };
 
 export const getUserRoleFromLocal = (token: string) => {
-  const user: any = decodeToken(token);
-  return user;
+  if (!token || typeof token !== "string" || !token.includes(".")) {
+    return null;
+  }
+
+  try {
+    const user: any = decodeToken(token);
+    return user;
+  } catch (error) {
+    console.error("Failed to decode token:", error);
+    return null;
+  }
 };
