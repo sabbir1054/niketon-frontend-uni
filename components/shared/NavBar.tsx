@@ -90,22 +90,12 @@ const NavBar = () => {
               <DropdownMenuContent>
                 {/* <DropdownMenuLabel>My Profile</DropdownMenuLabel>
               <DropdownMenuSeparator /> */}
-                {profileData?.data?.role === "OWNER" && (
-                  <Link href={"/dashboard"}>
-                    {" "}
-                    <DropdownMenuItem className="cursor-pointer border-b-1 rounded-none hover:bg-primary hover:text-white shadow-none w-full">
-                      Dashboard
-                    </DropdownMenuItem>
-                  </Link>
-                )}
-                {profileData?.data?.role === "TENANT" && (
-                  <Link href={"/dashboard/myRequest"}>
-                    {" "}
-                    <DropdownMenuItem className="cursor-pointer border-b-1 rounded-none hover:bg-primary hover:text-white shadow-none w-full">
-                      Dashboard
-                    </DropdownMenuItem>
-                  </Link>
-                )}
+                <Link href={"/dashboard"}>
+                  {" "}
+                  <DropdownMenuItem className="cursor-pointer border-b-1 rounded-none hover:bg-primary hover:text-white shadow-none w-full">
+                    Dashboard
+                  </DropdownMenuItem>
+                </Link>
                 <Link href={"/dashboard/profile"}>
                   <DropdownMenuItem className="cursor-pointer border-b-1 rounded-none hover:bg-primary hover:text-white shadow-none w-full">
                     Profile
