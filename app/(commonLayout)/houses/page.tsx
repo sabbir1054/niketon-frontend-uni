@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import { useGetHousesQuery } from "@/redux/api/houseApi";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useGetHousesQuery } from "@/redux/api/houseApi";
 
 import HouseCard from "@/components/HousePage/HouseCard";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Button } from "@/components/ui/button";
 import {
   Select,
   SelectContent,
@@ -73,7 +73,7 @@ const AllHouse = () => {
               <Button
                 type="button"
                 variant="ghost"
-                className="text-red-500 hover:bg-transparent"
+                className="text-red-500 hover:text-red-600 hover:bg-transparent cursor-pointer"
                 onClick={handleReset}
               >
                 Reset

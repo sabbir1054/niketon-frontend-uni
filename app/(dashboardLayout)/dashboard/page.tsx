@@ -1,3 +1,4 @@
+"use client";
 import MonthlyRequestBarChart from "@/components/modules/MonthlyRequestBarCharts";
 import SpinnerOverlay from "@/components/shared/SpinnerOverlay";
 import { Card, CardContent } from "@/components/ui/card";
@@ -32,20 +33,20 @@ const DashboardPage = () => {
       <div className="grid grid-cols-1 md:grid-cols-4 mt-5 gap-5">
         <Card>
           <CardContent className="text-center">
-            <h4>{data?.totalHouses}</h4>
+            <h4>{data?.totalHouses || 0}</h4>
             <p>Total Houses</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="text-center">
-            <h4>{data?.availableHouses}</h4>
+            <h4>{data?.availableHouses || 0}</h4>
             <p>Empty House</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="text-center">
-            <h4>854</h4>
-            <p>{data?.bookedHouses}</p>
+            <h4>{data?.bookedHouses || 0}</h4>
+            <p>Booked House</p>
           </CardContent>
         </Card>
       </div>
@@ -57,26 +58,26 @@ const DashboardPage = () => {
             <h4>
               {parseInt(data?.requestStatusSummary?.PENDING) +
                 parseInt(data?.requestStatusSummary?.ACCEPTED) +
-                parseInt(data?.requestStatusSummary?.CANCEL)}
+                parseInt(data?.requestStatusSummary?.CANCEL) || 0}
             </h4>
             <p>Total Request</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="text-center">
-            <h4>{data?.requestStatusSummary?.PENDING}</h4>
+            <h4>{data?.requestStatusSummary?.PENDING || 0}</h4>
             <p>Pending Request</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="text-center">
-            <h4>{data?.requestStatusSummary?.ACCEPTED}</h4>
+            <h4>{data?.requestStatusSummary?.ACCEPTED || 0}</h4>
             <p>Accepted Request</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="text-center">
-            <h4>{data?.requestStatusSummary?.CANCEL}</h4>
+            <h4>{data?.requestStatusSummary?.CANCEL || 0}</h4>
             <p>Canceled Request</p>
           </CardContent>
         </Card>
@@ -87,7 +88,7 @@ const DashboardPage = () => {
         <Card>
           <CardContent className="text-center">
             <h4>854</h4>
-            <p>Total Request</p>
+            <p>Total Feedback</p>
           </CardContent>
         </Card>
       </div>
