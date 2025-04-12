@@ -42,6 +42,7 @@ export default function SignupForm() {
       const res: any = await registerUser({ ...othersData });
       if (res?.data?.success === true) {
         toast.success("Registration successful");
+        window.location.href = "/auth/login";
         reset();
       }
     } catch (error: any) {
