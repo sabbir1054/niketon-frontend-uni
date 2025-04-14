@@ -62,9 +62,7 @@ export default function Sidebar() {
             <Link
               href="/dashboard/manageBookingRequest"
               className={`flex items-center space-x-2 p-2 hover:bg-gray-800 rounded-md ${
-                pathName === "/dashboard/manageBookingRequest"
-                  ? "bg-gray-800"
-                  : ""
+                pathName === "/dashboard/manageRequest" ? "bg-gray-800" : ""
               }`}
             >
               <GitPullRequest className="w-5 h-5" />
