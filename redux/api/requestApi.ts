@@ -15,6 +15,7 @@ const RequestApi = baseApi.injectEndpoints({
         url: "/request/ownerAllRequest",
         method: "GET",
       }),
+      providesTags: ["request"],
     }),
     getTenantAllRequest: build.query({
       query: (params) => ({
@@ -22,6 +23,7 @@ const RequestApi = baseApi.injectEndpoints({
         method: "GET",
         params: params,
       }),
+      providesTags: ["request"],
     }),
     getRequestDetails: build.query({
       query: (id: string) => ({
@@ -35,6 +37,7 @@ const RequestApi = baseApi.injectEndpoints({
         method: "PATCH",
         data: payload,
       }),
+      invalidatesTags: ["request"],
     }),
   }),
 });
