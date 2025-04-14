@@ -7,6 +7,7 @@ import { Plus } from "lucide-react";
 import Link from "next/link";
 import HouseCard from "../../../../components/HousePage/HouseCard";
 const ManageHousePage = () => {
+  
   const { data: allHouse, isLoading } = useMyHousesQuery({});
 
   return (

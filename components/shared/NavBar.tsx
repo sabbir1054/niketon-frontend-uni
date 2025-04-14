@@ -90,13 +90,19 @@ const NavBar = () => {
               <DropdownMenuContent>
                 {/* <DropdownMenuLabel>My Profile</DropdownMenuLabel>
               <DropdownMenuSeparator /> */}
-                <Link href={"/dashboard"}>
+                <Link
+                  href={`${
+                    profileData?.data.role === "OWNER"
+                      ? "dashboard"
+                      : "/tenant/dashboard/myRequest"
+                  }`}
+                >
                   {" "}
                   <DropdownMenuItem className="cursor-pointer border-b-1 rounded-none hover:bg-primary hover:text-white shadow-none w-full">
                     Dashboard
                   </DropdownMenuItem>
                 </Link>
-                <Link href={"/dashboard/profile"}>
+                <Link href={"/profile"}>
                   <DropdownMenuItem className="cursor-pointer border-b-1 rounded-none hover:bg-primary hover:text-white shadow-none w-full">
                     Profile
                   </DropdownMenuItem>
