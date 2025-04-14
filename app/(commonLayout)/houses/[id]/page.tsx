@@ -1,12 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
-import ImageCarousel from "@/components/HousePage/ImageCarousel";
 import OwnerProfile from "@/components/HousePage/OwnerProfile";
+import BookingDialog from "@/components/modules/BookingDialog";
 import SpinnerOverlay from "@/components/shared/SpinnerOverlay";
 import { Button } from "@/components/ui/button";
 import { useGetSingleHouseDetailsQuery } from "@/redux/api/houseApi";
 import { MapPin } from "lucide-react";
 import { useParams } from "next/navigation";
+import ImageCarousel from "../../../../components/HousePage/ImageCarousel";
 const getYouTubeEmbedUrl = (url: any) => {
   const videoId = url.split("v=")[1]?.split("&")[0];
   return `https://www.youtube.com/embed/${videoId}`;
@@ -97,6 +98,9 @@ const HouseDetailsPage = () => {
           </div>
         </div>
         <div className="col-span-4">
+          {data?.data?.status === "AVAILABLE" && (
+            <BookingDialog data={data?.data} />
+          )}
           <OwnerProfile user={data?.data?.houseOwner} />
         </div>
       </div>
