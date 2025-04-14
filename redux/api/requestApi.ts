@@ -11,9 +11,10 @@ const RequestApi = baseApi.injectEndpoints({
       }),
     }),
     getOwnerAllRequest: build.query({
-      query: () => ({
+      query: (params) => ({
         url: "/request/ownerAllRequest",
         method: "GET",
+        params: params,
       }),
       providesTags: ["request"],
     }),

@@ -35,14 +35,36 @@ const RequestSingleRow = ({ request }: any) => {
       <td className="py-3 px-4 border-b">
         {new Date(request.createdAt).toLocaleDateString()}
       </td>
-      <td className="py-3 px-4 border-b">
-        <Button
-          onClick={() => handleUpdateStatus("CANCEL")}
-          className="bg-red-500 cursor-pointer hover:bg-red-600"
-        >
-          <CircleX /> Cancel
-        </Button>
-      </td>
+      {user?.role === "TENANT" && (
+        <td className="py-3 px-4 border-b">
+          <Button
+            onClick={() => handleUpdateStatus("CANCEL")}
+            className="bg-red-500 cursor-pointer hover:bg-red-600"
+          >
+            <CircleX /> Cancel
+          </Button>
+        </td>
+      )}
+      {user?.role === "OWNER" && (
+        <>
+          <td className="py-3 px-4 border-b">
+            <Button
+              disabled={request?.requestStatus === "ACCEPTED" ? true : false}
+              onClick={() => handleUpdateStatus("ACCEPTED")}
+              className={`bg-green-500 cursor-pointer hover:bg-green-600 mx-2`}
+            >
+              Accepted
+            </Button>
+            <Button
+              disabled={request?.requestStatus === "CANCEL" ? true : false}
+              onClick={() => handleUpdateStatus("CANCEL")}
+              className="bg-red-500 cursor-pointer hover:bg-red-600"
+            >
+              <CircleX /> Cancel
+            </Button>
+          </td>
+        </>
+      )}
     </tr>
   );
 };
