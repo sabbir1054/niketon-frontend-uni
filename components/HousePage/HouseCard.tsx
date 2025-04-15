@@ -39,30 +39,36 @@ const HouseCard = ({ house }: any) => {
 
   return (
     <Card className="rounded-2xl shadow-lg overflow-hidden border p-4">
-      <div className="relative">
-        <img
-          src={`${house?.images?.length > 0 ? house?.images[0]?.url : "/"}`}
-          alt={house.houseName}
-          width={400}
-          height={300}
-          className="w-full h-52 object-cover rounded-xl"
-        />
-        <Badge className="absolute top-3 left-3 bg-blue-600 text-white">
-          Featured
-        </Badge>
-        <button className="absolute top-3 right-3 bg-white p-2 rounded-full shadow-md">
-          ❤️
-        </button>
-        <div className="absolute bottom-3 right-3 bg-white p-1 rounded-full shadow-md">
-          <Image
-            src={`${house?.houseOwner?.photo ? house?.houseOwner?.photo : "/"}`}
-            alt="Owner"
-            width={30}
-            height={30}
-            className="rounded-full"
+      <Link className="" href={`/houses/${house?.id}`}>
+        {" "}
+        <div className="relative">
+          <img
+            src={`${house?.images?.length > 0 ? house?.images[0]?.url : "/"}`}
+            alt={house.houseName}
+            width={400}
+            height={300}
+            className="w-full h-52 object-cover rounded-xl"
           />
+          <Badge className="absolute top-3 left-3 bg-blue-600 text-white">
+            Featured
+          </Badge>
+          <button className="absolute top-3 right-3 bg-white p-2 rounded-full shadow-md">
+            ❤️
+          </button>
+          <div className="absolute bottom-3 right-3 bg-white p-1 rounded-full shadow-md">
+            <Image
+              src={`${
+                house?.houseOwner?.photo ? house?.houseOwner?.photo : "/"
+              }`}
+              alt="Owner"
+              width={30}
+              height={30}
+              className="rounded-full"
+            />
+          </div>
         </div>
-      </div>
+      </Link>
+
       <CardContent className="mt-3">
         <div className="flex justify-between">
           <p className="text-xl font-bold">${house.rentFee.toLocaleString()}</p>
