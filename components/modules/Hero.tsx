@@ -1,8 +1,17 @@
+"use client";
 import { Plus } from "lucide-react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 
 const Hero = () => {
+  const router = useRouter();
+  const [value, setValue] = useState("");
+  const handleSearch = () => {
+    router.push(`/houses/?q=${value}`);
+  };
   return (
     <div
       style={{
@@ -23,14 +32,20 @@ const Hero = () => {
             3000+ listings for you to choose
           </p>
 
-          <Button className="mt-5 md:mt-7 text-lg p-5">
-            {" "}
-            <Plus /> Join with us{" "}
-          </Button>
+          <Link href={"/auth/login"}>
+            <Button className="mt-5 md:mt-7 text-lg p-5">
+              {" "}
+              <Plus /> Join with us{" "}
+            </Button>
+          </Link>
           <div className="flex items-center">
-            {" "}
-            <Input className=" w-full bg-white mt-5 h-13 "></Input>{" "}
-            <Button className="mt-5 px-10 py-5 -ml-32">Search</Button>
+            <Input
+              onChange={(e) => setValue(e.target.value)}
+              className=" w-full bg-white mt-5 h-13 "
+            ></Input>{" "}
+            <Button onClick={handleSearch} className="mt-5 px-10 py-5 -ml-32">
+              Search
+            </Button>
           </div>
         </div>
       </div>

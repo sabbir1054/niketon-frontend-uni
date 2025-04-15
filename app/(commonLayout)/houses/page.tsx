@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import { useState } from "react";
-import { useForm } from "react-hook-form";
 import { useGetHousesQuery } from "@/redux/api/houseApi";
+import { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
 
 import HouseCard from "@/components/HousePage/HouseCard";
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Button } from "@/components/ui/button";
 import {
   Select,
   SelectContent,
@@ -16,6 +16,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useSearchParams } from "next/navigation";
 
 const tenantTypes = ["OTHERS", "BACHELOR", "FAMILY"];
 const houseStatuses = ["AVAILABLE", "BOOKED"];
@@ -29,9 +30,12 @@ const houseCategories = [
 ];
 
 const AllHouse = () => {
+  const searchParams = useSearchParams();
+  console.log(searchParams.get("q"));
+
   const { register, handleSubmit, setValue, reset } = useForm({
     defaultValues: {
-      searchTerm: "",
+      searchTerm: searchParams.get("q") || "",
       minRentFee: "",
       maxRentFee: "",
       category: "",
@@ -61,7 +65,9 @@ const AllHouse = () => {
   };
 
   const { data: houses, isLoading } = useGetHousesQuery(queryParams);
-
+  useEffect(() => {
+    setQueryParams({ searchTerm: `${searchParams.get("q")}` });
+  }, [searchParams]);
   return (
     <div className="container mx-auto my-5 px-4">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">

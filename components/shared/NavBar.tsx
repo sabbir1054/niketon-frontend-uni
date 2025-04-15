@@ -44,7 +44,7 @@ const NavBar = () => {
           </Link>
           <div className="space-x-4 hidden md:flex">
             <Link
-              href="/home"
+              href="/"
               className="text-black hover:font-bold transition-all duration-75 ease-in-out "
             >
               Home

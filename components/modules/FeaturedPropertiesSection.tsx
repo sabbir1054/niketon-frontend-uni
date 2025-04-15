@@ -1,38 +1,16 @@
+"use client";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { useGetHousesQuery } from "@/redux/api/houseApi";
 import HouseCard from "../HousePage/HouseCard";
-const demoHouses = [
-  {
-    houseName: "Sunset Villa",
-    rentFee: 1200,
-    address: "123 Ocean Drive, Miami, FL",
-  },
-  {
-    houseName: "Urban Oasis",
-    rentFee: 950,
-    address: "456 Downtown St, Austin, TX",
-  },
-  {
-    houseName: "Lakeside Retreat",
-    rentFee: 1100,
-    address: "789 Lakeview Blvd, Chicago, IL",
-  },
-  {
-    houseName: "Cozy Cottage",
-    rentFee: 850,
-    address: "321 Country Rd, Nashville, TN",
-  },
-  {
-    houseName: "Mountain Escape",
-    rentFee: 1350,
-    address: "654 Summit Lane, Denver, CO",
-  },
-  {
-    houseName: "Modern Loft",
-    rentFee: 1050,
-    address: "987 Skyline Ave, Seattle, WA",
-  },
-];
+import SpinnerOverlay from "../shared/SpinnerOverlay";
 
 const FeaturedPropertiesSection = () => {
+  const { data, isLoading } = useGetHousesQuery({});
+  if (isLoading) {
+    return <SpinnerOverlay />;
+  }
+  console.log(data);
+  
   return (
     <section className="py-12 px-4 max-w-7xl mx-auto">
       <div className="text-center mb-10">
@@ -44,8 +22,8 @@ const FeaturedPropertiesSection = () => {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {demoHouses.map((house, index) => (
-          <HouseCard key={index} house={house} />
+        {data?.data?.data?.slice(0, 6).map((house: any, idx: number) => (
+          <HouseCard key={idx} house={house} />
         ))}
       </div>
     </section>

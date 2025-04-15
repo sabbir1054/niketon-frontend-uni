@@ -84,7 +84,7 @@ const HouseCard = ({ house }: any) => {
 
         <div className="mt-3 text-sm text-gray-600 flex justify-between">
           <span>Listed on: 13 Jan 2023</span>
-          <span className="font-semibold">Category: House</span>
+          <span className="font-semibold">Category: {house?.category}</span>
         </div>
         <Link className="" href={`/houses/${house?.id}`}>
           {" "}

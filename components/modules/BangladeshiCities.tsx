@@ -58,7 +58,7 @@ export default function BangladeshiCities() {
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-300"
             />
-            <div className="absolute inset-0 bg-[00000070]"></div>
+            <div className="absolute inset-0 bg-[#00000070]"></div>
             <div className="absolute bottom-4 left-4 text-white z-10">
               <h3 className="text-lg font-semibold">{city.name}</h3>
               <p className="text-sm">{city.properties} Properties</p>

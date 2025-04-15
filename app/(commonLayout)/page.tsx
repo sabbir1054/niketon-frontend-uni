@@ -13,7 +13,7 @@ export default function Home() {
       <PropertyTypeSection />
       <FeaturedPropertiesSection />
       <BangladeshiCities />
-      <TestimonialSection />
+      <TestimonialSection/>
     </>
   );
 }

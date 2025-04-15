@@ -76,7 +76,10 @@ const TenantRequest = () => {
               </tr>
             ) : (
               data?.data?.map((request: any, idx: any) => (
-                <RequestSingleRow key={idx} request={request} />
+                <RequestSingleRow
+                  key={idx}
+                  request={request}
+                />
               ))
             )}
           </tbody>

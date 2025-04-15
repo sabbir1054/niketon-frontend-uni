@@ -34,7 +34,7 @@ const ManageFeedbacksPage = () => {
             </tr>
           </thead>
           <tbody>
-            {feedbacks.map((fb:any) => (
+            {feedbacks.map((fb: any) => (
               <tr key={fb?.id} className="border-b hover:bg-gray-50">
                 {/* Tenant Info */}
                 <td className="px-4 py-3 flex items-center gap-2">

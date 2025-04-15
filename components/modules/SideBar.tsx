@@ -60,9 +60,11 @@ export default function Sidebar() {
               {!collapsed && <span>Manage House</span>}
             </Link>
             <Link
-              href="/dashboard/manageBookingRequest"
+              href="/dashboard/manageRequest"
               className={`flex items-center space-x-2 p-2 hover:bg-gray-800 rounded-md ${
-                pathName === "/dashboard/manageRequest" ? "bg-gray-800" : ""
+                pathName === "/dashboard/manageBookingRequest"
+                  ? "bg-gray-800"
+                  : ""
               }`}
             >
               <GitPullRequest className="w-5 h-5" />

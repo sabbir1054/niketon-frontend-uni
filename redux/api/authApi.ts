@@ -55,5 +55,5 @@ export const {
   useForgetPasswordMutation,
   useVerifyOtpMutation,
   useResetPasswordMutation,
-  useChangePasswordMutation,
+  useChangePasswordMutation
 } = AuthApi;
