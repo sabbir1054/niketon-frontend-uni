@@ -56,6 +56,14 @@ const houseApi = baseApi.injectEndpoints({
       }),
       invalidatesTags: ["houses"],
     }),
+    giveFeedback: build.mutation({
+      query: (arg) => ({
+        url: `/feedback/submit/${arg?.id}`,
+        method: "POST",
+        data: arg.payload,
+      }),
+      // invalidatesTags: ["houses"],
+    }),
   }),
 });
 
@@ -67,4 +75,5 @@ export const {
   useDeleteHouseImageMutation,
   useUpdateHouseInfoMutation,
   useMyHousesQuery,
+  useGiveFeedbackMutation,
 } = houseApi;
