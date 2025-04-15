@@ -64,6 +64,12 @@ const houseApi = baseApi.injectEndpoints({
       }),
       // invalidatesTags: ["houses"],
     }),
+    ownerAllFeedback: build.query({
+      query: () => ({
+        url: `/feedback/ownerFeedback/`,
+        method: "GET",
+      }),
+    }),
   }),
 });
 
@@ -76,4 +82,5 @@ export const {
   useUpdateHouseInfoMutation,
   useMyHousesQuery,
   useGiveFeedbackMutation,
+  useOwnerAllFeedbackQuery,
 } = houseApi;
