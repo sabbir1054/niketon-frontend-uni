@@ -48,11 +48,11 @@ export default function CreateNewPassword() {
       const res: any = await resetPassword({
         otp: otp,
         email: email,
-        new_password: data?.newPassword,
+        newPassword: data?.newPassword,
       }).unwrap();
       if (res?.success === true) {
         toast.success("Verification successful, password changed !");
-        router.push(`/auth/signin/job_seeker`);
+        router.push(`/auth/login`);
       } else {
         toast.error("Invalid or expired verification code");
       }

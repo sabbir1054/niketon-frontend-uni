@@ -16,7 +16,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { useSearchParams } from "next/navigation";
+import { ReadonlyURLSearchParams, useSearchParams } from "next/navigation";
 
 const tenantTypes = ["OTHERS", "BACHELOR", "FAMILY"];
 const houseStatuses = ["AVAILABLE", "BOOKED"];
@@ -30,8 +30,7 @@ const houseCategories = [
 ];
 
 const AllHouse = () => {
-  const searchParams = useSearchParams();
-  console.log(searchParams.get("q"));
+  const searchParams: ReadonlyURLSearchParams = useSearchParams();
 
   const { register, handleSubmit, setValue, reset } = useForm({
     defaultValues: {
@@ -65,9 +64,14 @@ const AllHouse = () => {
   };
 
   const { data: houses, isLoading } = useGetHousesQuery(queryParams);
+
   useEffect(() => {
-    setQueryParams({ searchTerm: `${searchParams.get("q")}` });
+    const query = searchParams.get("q");
+    if (query && query.length > 0) {
+      setQueryParams({ searchTerm: query });
+    }
   }, [searchParams]);
+
   return (
     <div className="container mx-auto my-5 px-4">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">

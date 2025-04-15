@@ -34,7 +34,7 @@ const ForgotPasswordVerifyOtp = () => {
       }).unwrap();
       if (res?.success === true) {
         toast.success("Verification successful !");
-        router.push(`/auth/forgotPassword/newPassword/${email}/${otp}`);
+        router.push(`/auth/forgetPassword/newPassword/${email}/${otp}`);
       } else {
         toast.error("Invalid or expired verification code");
       }
