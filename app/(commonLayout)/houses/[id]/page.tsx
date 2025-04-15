@@ -1,7 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
+import { FeedbackDialog } from "@/components/Forms/FeedbackDialoge";
 import OwnerProfile from "@/components/HousePage/OwnerProfile";
 import BookingDialog from "@/components/modules/BookingDialog";
+import { FeedbackCard } from "@/components/modules/FeedbackCard";
 import SpinnerOverlay from "@/components/shared/SpinnerOverlay";
 import { Button } from "@/components/ui/button";
 import { useGetSingleHouseDetailsQuery } from "@/redux/api/houseApi";
@@ -96,12 +98,20 @@ const HouseDetailsPage = () => {
               referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
+          <div className="mt-5">
+            <h2 className="my-5 text-2xl font-medium">Tenant Reviews</h2>
+            {data?.data?.Feedback?.map((feedback: any, idx: any) => (
+              <FeedbackCard key={idx} feedback={feedback} />
+            ))}
+          </div>
         </div>
         <div className="col-span-4">
           {data?.data?.status === "AVAILABLE" && (
             <BookingDialog data={data?.data} />
           )}
+
           <OwnerProfile user={data?.data?.houseOwner} />
+          <FeedbackDialog />
         </div>
       </div>
     </div>
